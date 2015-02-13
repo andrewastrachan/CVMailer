@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+  before_action :redirect_unless_logged_in
+  
   include ActionView::Helpers::DateHelper
   before_action :all_jobs, only: [:index, :destroy]
   respond_to :html, :js

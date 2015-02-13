@@ -22,6 +22,10 @@ class ApplicationController < ActionController::Base
     redirect_to current_user if logged_in?
   end
   
+  def redirect_unless_logged_in
+    redirect_to root_path unless logged_in?
+  end
+  
   def log_out!
     current_user.reset_session_token!
     session[:token] = nil
