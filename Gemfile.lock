@@ -37,8 +37,15 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
+    autoprefixer-rails (5.1.5)
+      execjs
+      json
+    bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.3)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -58,6 +65,9 @@ GEM
     execjs (2.3.0)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
+    google_maps_geocoder (0.3.1)
+      activesupport
+      rack
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.2.6)
@@ -108,6 +118,8 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    responders (2.1.0)
+      railties (>= 4.2.0, < 5)
     sass (3.4.11)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -145,16 +157,23 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (~> 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    wicked_pdf (0.11.0)
+      rails
+    wkhtmltopdf-binary (0.9.9.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
+  google_maps_geocoder
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.0)
+  responders
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
@@ -162,3 +181,5 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  wicked_pdf
+  wkhtmltopdf-binary

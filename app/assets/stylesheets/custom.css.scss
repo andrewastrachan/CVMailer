@@ -1,0 +1,35 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//navbar
+
+a#logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+}
+
+//application-body
+
+.container.main-body {
+	margin-top: 50px;
+} 
+
+//signin form
+
+.sign-in-btn {
+	margin-top: 10px;
+	width: 100%;
+}
+
+
+
+
+
+
+

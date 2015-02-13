@@ -1,0 +1,123 @@
+// Place all the styles related to the jobs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//Jobs Page
+
+.btn-import {
+	margin-top: 5px;
+	width: 25%;
+}
+
+.form-email-blast.top {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.form-email-blast.bottom {
+	margin-top:	-1px;
+	margin-bottom: 5px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+//Jobs Page -- Table Styles
+
+.table-jobs {
+	height: 300px;
+	overflow-y: auto;
+}
+
+.theader:hover {
+	text-decoration: underline;
+}
+
+.col-id {
+	width: 5%;
+}
+
+.col-company {
+	width: 10%;
+}
+
+.col-recipient {
+	width: 8%;
+}
+
+.col-title {
+	width: 8%;
+}
+
+.col-address {
+	width: 10%;
+}
+
+.col-blurb {
+	width: 25%;
+}
+
+.col-email {
+	width: 18%;
+}
+
+.col-created-at {
+	width: 12%;
+}
+
+.col-delete {
+	width: 4px;
+	float: right;
+}
+
+.job-form {
+	width: 90%;
+}
+//
+.header-step-container {
+	width: 33%;
+	display: inline-block;
+	vertical-align: text-top;
+}
+
+.header-content {
+	display: block;
+}
+
+//Job Page
+
+.job {
+	margin-top: 40px;
+	margin-left: 60px;
+	margin-right: 60px;
+}
+
+.header {
+	font-size: 12px;
+}
+
+.boxes {
+	height: 15px;
+	width: 50px;
+	position: fixed;
+	margin-left: -60px;
+	margin-top: 10px;
+}
+
+.box {
+	height: 100%;
+	width: 15px;
+	display: inline-block;
+	margin-right: -1px;
+}
+
+.yellow {
+	background-color: rgb(243, 243, 165);
+}
+
+.red {
+	background-color: rgb(251, 66, 66);
+}
+
+.blue {
+	background-color: rgb(50, 163, 255);
+}

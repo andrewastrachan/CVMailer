@@ -1,0 +1,100 @@
+<h3>Jobs</h3>
+
+<table class="table table-hover" style="table-layout:fixed">
+	<caption>Jobs In Loading Area</caption>
+	<thead>
+		<tr>
+		
+			<th scope="col" class="theader col-id">cl</th>
+		
+			<th scope="col" class="theader col-company">company</th>
+		
+			<th scope="col" class="theader col-recipient">recipient</th>
+		
+			<th scope="col" class="theader col-title">title</th>
+			
+			<th scope="col" class="theader col-address">address</th>
+			
+			<th scope="col" class="theader col-blurb">blurb</th>
+		
+			<th scope="col" class="theader col-email">email</th>
+		
+			<th scope="col" class="theader col-created-at">created</th>
+			
+			<th scope="col" class="theader col-delete">del</th>
+		
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @jobs.each_with_index do |job, idx| %>
+			<% next if job.sent == true %>
+			<tr>
+				<th scope="row"><%= link_to job.id, "jobs/#{job.id}.pdf" %></td>
+			  <td style=""><%= job.company %></td>
+			  <td style=""><%= job.recipient || "–" %></td>
+				<td style=""><%= job.title || "–" %></td>	
+				<td style=""><%= job.address || "–" %></td>	
+				<td style=""><%= job.blurb || "–" %></td>	
+			  <td style=""><%= job.email %></td>
+				<td style=""><%= time_ago_in_words(job.created_at) + " ago" %></td>
+				<td style="">
+						<form action="/jobs/<%= job.id %>" method="POST" data-remote="true">
+							<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+						  <input type="hidden" name="_method" value="DELETE">
+							<input type="submit" value="x" class="btn btn-danger">
+						</form>
+				</td>
+			</tr>
+	  <% end %>
+	</tbody>
+</table>
+
+<!-- Async Job Form -->
+
+<%= link_to 'Add Job', new_job_path, remote: true %>
+<div id="job-form" style="display:none;"></div>
+
+<table class="table table-hover" style="table-layout:fixed">
+	<caption>Sent Jobs</caption>
+	<thead>
+		<tr>
+		
+			<th scope="col" class="theader col-id">cl</th>
+		
+			<th scope="col" class="theader">company</th>
+		
+			<th scope="col" class="theader">recipient</th>
+		
+			<th scope="col" class="theader">blurb</th>
+		
+			<th scope="col" class="theader">email</th>
+		
+			<th scope="col" class="theader">sent</th>
+			
+			<th scope="col" class="theader col-delete">del</th>
+		
+		</tr>
+	</thead>
+	
+	<tbody>
+		<% @jobs.each_with_index do |job, idx| %>
+			<% next if job.sent == false %>
+			<tr>
+				<th scope="row"><%= link_to job.id, "jobs/#{job.id}.pdf" %></td>
+			  <td style=""><%= job.company%></td>
+			  <td style=""><%= job.recipient || "–" %></td>
+				<td style=""><%= job.blurb || "–" %></td>	
+			  <td style=""><%= job.email %></td>
+				<td style=""><%= time_ago_in_words(job.updated_at) + " ago" %>
+				<td style="">
+						<form action="/jobs/<%= job.id %>" method="POST" data-remote="true">
+							<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+						  <input type="hidden" name="_method" value="DELETE">
+							<input type="submit" value="x" class="btn btn-danger">
+						</form>
+				</td>
+			</tr>
+	  <% end %>
+	</tbody>
+</table>

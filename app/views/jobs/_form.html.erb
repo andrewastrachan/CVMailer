@@ -1,0 +1,5 @@
+<%= form_for @job, remote: true do |f|   %>
+  <%= f.text_field  :company %>
+  <%= f.text_field  :blurb %>
+  <%= f.button :submit                           %>
+<% end %>

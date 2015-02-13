@@ -1,0 +1,39 @@
+
+	
+	<div class="header-step-container">
+		<h3>Download the CSV</h3>
+	
+	</div>
+	<div class="header-step-container">
+
+		<h3>Import a CSV</h3>
+			<%= form_tag import_jobs_path,  multipart: true do %>
+				<div class="file-upload"><%= file_field_tag :file %></div>
+				<div class="file-upload"><%= submit_tag "Import Jobs CSV", class: "btn btn-primary btn-import" %></div>
+			<% end %>
+	</div>
+	<div class="header-step-container">
+		<h3>Send Jobs</h3>
+
+		<form accept-charset="UTF-8" action="/mail" method="post">
+		  <input name="utf8" type="hidden" value="&#x2713;" />
+		  <input name="authenticity_token" type="hidden" value="J7CBxfHalt49OSHp27hblqK20c9PgwJ108nDHX/8Cts=" />
+	
+			<input name=gmail[user_name] 
+						 type="email" 
+						 class="form-control form-email-blast top"
+						 placeholder="gmail username">
+			<input name=gmail[password] 
+						 type="password" 
+						 class="form-control form-email-blast bottom"
+						 placeholder="gmail password">
+		 	<button to="submit" 
+							class="btn btn-success form-email-blast">
+							Send All Jobs
+			</button>
+		</form>
+	</div>
+	
+<div id="jobs">
+	<%= render 'jobs' %>
+</div>
