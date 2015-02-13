@@ -1,5 +1,5 @@
 class Job < ActiveRecord::Base
-  require 'CSV'
+  require 'csv'
   
   validates :user_id, :title, :email, presence: true
   validates :sent, :inclusion => {:in => [true, false]}
