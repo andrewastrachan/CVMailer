@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
   
   def redirect_if_logged_in
-    redirect_to current_user if logged_in?
+    redirect_to jobs_url if logged_in?
   end
   
   def redirect_unless_logged_in

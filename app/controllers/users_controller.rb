@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       log_in(@user)
       redirect_to jobs_path
     else
+      flash.now[:danger] = @user.errors.full_messages
       render 'new'
     end
   end
@@ -31,6 +32,6 @@ class UsersController < ApplicationController
   protected
   
     def user_params
-      params.require(:user).permit(:email, :signature, :password, :password_confirmation)
+      params.require(:user).permit(:email, :signature, :password, :password_confirmation, :resume)
     end
 end

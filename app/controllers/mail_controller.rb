@@ -8,8 +8,9 @@ class MailController < ApplicationController
       next if job.sent == true
       @job = job
       @user = current_user
-      pdf = render_to_string(:pdf => 'MyPDF',:template => 'jobs/show.pdf.erb')
-      UserMailer.email_blast(job, pdf, {user_name: params[:gmail][:user_name], password: params[:gmail][:password]}).deliver_now
+      resume = File.read(current_user.resume.current_path)
+      pdf = render_to_string(:pdf => 'cover_letter',:template => 'jobs/show.pdf.erb')
+      UserMailer.email_blast(job, pdf, resume, {user_name: params[:gmail][:user_name], password: params[:gmail][:password]}).deliver_now
       job.send_job
     end
     redirect_to jobs_url

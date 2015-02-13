@@ -1,8 +1,11 @@
 class User < ActiveRecord::Base
-  validates :email, :password_digest, :session_token, presence: true
+  validates :email, :password_digest, :session_token, :resume, presence: true
   validates :password, length: { minimum: 6 }, confirmation: true, on: :create
   after_initialize :give_session_token
   has_secure_password
+  attr_accessor :resume
+  
+  mount_uploader :resume, ResumeUploader
   
   has_many :jobs
   

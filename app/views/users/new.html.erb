@@ -1,7 +1,7 @@
-<h1>Users#new</h1>
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
-		<%= form_for(@user) do |f| %>
+		<h1>Sign Up</h1>
+		<%= form_for @user, :html => { multipart: true } do |f| %>
 			<%= f.label :email %>
 			<%= f.email_field :email, class: "form-control" %>
 		
@@ -10,6 +10,9 @@
 		
 			<%= f.label :password_confirmation, "Confirmation" %>
 			<%= f.password_field :password_confirmation, class: "form-control" %>
+			
+			<%= f.label :resume, "Resume" %>
+			<%= f.file_field :resume %>
 			
 			<%= f.submit "Create my account", class: 'btn btn-primary sign-in-btn'%>
 		

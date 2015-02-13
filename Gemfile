@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'pg'
 gem 'jbuilder', '~> 2.0'
+gem 'carrierwave'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
