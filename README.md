@@ -2,10 +2,13 @@
 
 *to-dos*
 
--Resume Upload
--Add Jobs Form (small -- rails AJAX style)
--Edit Jobs Form (small -- rails AJAX style)
--SSL
--Async tasks(sidekiq?)
--Custom Templates / Fix Main Cover Letter Template
--Warnings ( ex. if resume not uploaded )
+1.Resume Upload
+2.Forms
+..* Add Jobs Form (small -- rails AJAX style)
+..* Edit Jobs Form (small -- rails AJAX style)
+4.SSL
+5.Async tasks
+..*sidekiq?
+6.Custom Templates / Fix Main Cover Letter Template
+7.Warnings 
+..*( ex. if resume not uploaded )
