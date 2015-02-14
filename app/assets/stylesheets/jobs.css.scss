@@ -4,6 +4,9 @@
 
 //Jobs Page
 
+body {
+}
+
 .btn-import {
 	margin-top: 5px;
 	width: 25%;
@@ -83,16 +86,21 @@
 	display: block;
 }
 
-//Job Page
+//Job Page -- PDF of Job Cover Letter
 
 .job {
 	margin-top: 40px;
 	margin-left: 60px;
 	margin-right: 60px;
+	font-family: 'Muli', sans-serif;
 }
 
 .header {
 	font-size: 12px;
+}
+
+.cover-paragraphs {
+	font-size: 14px;
 }
 
 .boxes {
@@ -100,24 +108,24 @@
 	width: 50px;
 	position: fixed;
 	margin-left: -60px;
-	margin-top: 10px;
+	margin-top: 46px;
 }
 
 .box {
 	height: 100%;
 	width: 15px;
 	display: inline-block;
-	margin-right: -1px;
+	margin-right: -3px;
 }
 
 .yellow {
-	background-color: rgb(243, 243, 165);
+	background-color: rgb(253, 198, 46)
 }
 
 .red {
-	background-color: rgb(251, 66, 66);
+	background-color: rgb(252, 66, 38);
 }
 
 .blue {
-	background-color: rgb(50, 163, 255);
+	background-color: rgb(26, 164, 216);
 }

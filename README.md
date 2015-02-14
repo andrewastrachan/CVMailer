@@ -1,7 +1,7 @@
 #CVMailer
 
 *to-dos*
-1. Make Carrierwave work for Heroku (Amazon S3)
+1. Make carrierwave work for Heroku (Amazon S3)
 2. Forms
 ..* Add Jobs Form (small -- rails AJAX style).
 ..* Edit Jobs Form (small -- rails AJAX style).

@@ -47,13 +47,19 @@
 				</td>
 			</tr>
 	  <% end %>
+
+
+
+		<tr id="job-form" style="display:none;">
+		</tr>
 	</tbody>
 </table>
 
+<%= link_to 'Add Job', new_job_path, remote: true %>
+
 <!-- Async Job Form -->
 
-<%= link_to 'Add Job', new_job_path, remote: true %>
-<div id="job-form" style="display:none;"></div>
+
 
 <table class="table table-hover" style="table-layout:fixed">
 	<caption>Sent Jobs</caption>
@@ -82,7 +88,7 @@
 			<% next if job.sent == false %>
 			<tr>
 				<th scope="row"><%= link_to job.id, "jobs/#{job.id}.pdf" %></td>
-			  <td style=""><%= job.company%></td>
+			  <td style=""><%= job.company %></td>
 			  <td style=""><%= job.recipient || "–" %></td>
 				<td style=""><%= job.blurb || "–" %></td>	
 			  <td style=""><%= job.email %></td>

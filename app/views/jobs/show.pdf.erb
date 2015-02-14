@@ -1,38 +1,50 @@
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
  <%= wicked_pdf_stylesheet_link_tag "jobs" %>
+ 
 <div class="job">
-<body>
-	<div class="boxes">
-		<div class="box yellow"></div>
-		<div class="box red"></div>
-		<div class="box blue"></div>
-	</div>
-
-	<h1><%= @user.signature %></h1>
-	<p class="header">770-312-9877 										&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.email %> 										&nbsp;&nbsp;&nbsp;&nbsp;1061 Market Street San Francisco, CA 94103</p>
-	<br>
-	<br>
-	January 5, 2015
-	<br>
-	<br>
-	<%= @job.recipient %> 
-	<br>
-	<%= @job.street_address %>
-	<br>
-	<%= @job.location %>
-	<br>
-	<br>
-	<%= @job.process_greeting %>
-	<br>
-	<p>
-	I am a software developer with experience in Rails, SQL, and Backbone.js. I have a passion for building cool stuff – I my spare time I have developed web applications and games in Javascript as well as Ruby. Recently, I created a home-rental site in an effort to solidify my skills with Backbone.js, and I am currently working on a web- based storyboarding application.
-	</p>
-	<p>
-	I work well in a team-driven environment. While learning to program, I spent countless hours pair programming, and my ability to collaborate and communicate efficiently were essential to my success. Working in a fast-paced, team-oriented, environment where I can work with the best in the industry is important to me. <%= @job.blurb %>
-	</p>
-	<p>
-	Attached, you will find my resume that links to my recent work along with my Github. Thank you for considering my application.
-	</p>
-	<br>
-	<%= @user.signature %>
-</body>
+	<body>
+		<div class="boxes">
+			<div class="box yellow"></div>
+			<div class="box red"></div>
+			<div class="box blue"></div>
+		</div>
+		<br>
+		<h2><%= @user.signature %></h2>
+		<p class="header">770-312-9877 										&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.email %> 										&nbsp;&nbsp;&nbsp;&nbsp;1061 Market Street San Francisco, CA 94103</p>
+		
+	<div class="cover-paragraphs">
+		
+		<br>
+		<br>
+		January 5, 2015
+		<br>
+		<br>
+		<% if @job.recipient %>
+			<%= @job.recipient %> 
+			<br>
+		<% end %>
+		<%= @job.company %> 
+		<br>
+		<%= @job.street_address %>
+		<br>
+		<%= @job.location %>
+		<br>
+		<br>
+		<%= @job.process_greeting %>
+		<br>
+			
+		<p>
+		I am a software developer with experience in Rails, SQL, and Backbone.js. I have a passion for building cool stuff – In my spare time I have developed web applications and games in Javascript as well as Ruby. Recently, I created a home-rental site in an effort to solidify my skills with Backbone.js, and I am currently working on a web- based storyboarding application.
+		</p>
+		<p>
+		I work well in a team-driven environment. While learning to program, I spent countless hours pair programming, and my ability to collaborate and communicate efficiently were essential to my success. Working in a fast-paced, team-oriented, environment where I can work with the best in the industry is important to me. <%= @job.blurb %>
+		</p>
+		<p>
+		Attached, you will find my resume that links to my recent work along with my Github. Thank you for considering my application.
+		</p>
+		<br>
+		<%= @user.signature %>
+	<div>
+		
+	</body>
 </div>

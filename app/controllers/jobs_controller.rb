@@ -11,6 +11,7 @@ class JobsController < ApplicationController
   
   def create
     @job = current_user.jobs.new(job_params)
+    debugger
     @job.save!
   end
   
@@ -18,6 +19,7 @@ class JobsController < ApplicationController
     @user = current_user
     @job = Job.find(params[:id])
     respond_to do |format|
+      format.html
       format.pdf do 
         render :pdf => "jobs/show.pdf.erb"
       end

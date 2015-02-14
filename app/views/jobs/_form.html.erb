@@ -1,5 +1,13 @@
-<%= form_for @job, remote: true do |f|   %>
-  <%= f.text_field  :company %>
-  <%= f.text_field  :blurb %>
-  <%= f.button :submit                           %>
-<% end %>
+<tr>
+	<%= form_for @job, remote: true do |f| %>
+	<th scope="row" class="col-id">	<%= f.submit "+", class: 'btn btn-sm btn-success sign-in-btn'%></th>
+  <td style="" class="col-company"><%= f.text_field :company, class: "form-control col-company" %></td>
+  <td style="" class="col-blurb"><%= f.text_field :blurb, class: "form-control"%></td>
+	<td style="" class="col-recipient"><%= f.text_field :recipient, class: "form-control" %></td>	
+	<td style="" class="col-title"><%= f.text_field :title, class: "form-control" %></td>	
+	<td style="" class="col-address"><%= f.text_field :address, class: "form-control" %></td>	
+  <td style="" class="col-blurb"><%= f.text_field :blurb, class: "form-control" %></td>
+	<td style="" class="col-email"><%= f.text_field :email, class: "form-control" %></td>
+	<td style=""></td>
+	<% end %>
+</tr>
