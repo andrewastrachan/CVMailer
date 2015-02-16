@@ -14,7 +14,8 @@ class Job < ActiveRecord::Base
   # end
   
   def self.import(file, user)
-    CSV.foreach(file.path, headers: true) do |row|
+    debugger
+    CSV.foreach(file.path, encoding: "r:ISO-8859-1", headers: true) do |row|
       next if row["company"].nil?
       row = row.to_hash
       j = user.jobs.new(row)
